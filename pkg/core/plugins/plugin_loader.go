@@ -16,11 +16,12 @@ limitations under the License.
 package plugins
 
 import (
-	"github.com/nitroci/nitroci-core/pkg/core/plugins"
+	pkgCPlugins "github.com/nitroci/nitroci-core/pkg/core/plugins"
+
 	"github.com/spf13/cobra"
 )
 
-func LoadMapFromFlags(cmd *cobra.Command, flags []plugins.Flags) map[string]interface{} {
+func LoadMapFromFlags(cmd *cobra.Command, flags []pkgCPlugins.Flags) map[string]interface{} {
 	flagsMap := map[string]interface{}{}
 	if len(flags) > 0 {
 		for _, flag := range flags {
@@ -38,7 +39,7 @@ func LoadMapFromFlags(cmd *cobra.Command, flags []plugins.Flags) map[string]inte
 	return flagsMap
 }
 
-func LoadFlags(cmd *cobra.Command, flags []plugins.Flags) {
+func LoadFlags(cmd *cobra.Command, flags []pkgCPlugins.Flags) {
 	if len(flags) > 0 {
 		for _, flag := range flags {
 			switch flag.Type {
